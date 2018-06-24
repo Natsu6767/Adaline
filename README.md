@@ -24,6 +24,6 @@ Both the Adaline models were trained on the Iris dataset.
 </p>
 
 <p float="left">
-  <img src="images/AdalineSGD Decision Region.png" width="400" />
+  <img src="images/AdalineSGD Decision Boundary.png" width="400" />
   <img src="images/AdalineSGD Training Error.png" width="400" /> 
 </p>
