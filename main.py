@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt 
 
 from adalinegd import AdalineGD
+from adalinesgd import AdalineSGD
 import pdr
 
 
@@ -28,20 +29,41 @@ X_std[:, 0] = (X[:, 0] - X[:, 0].mean()) / X[:, 0].std()
 X_std[:, 1] = (X[:, 1] - X[:, 1].mean()) / X[:, 1].std()
 
 # Create the AdalineGD model
-model = AdalineGD(n_iter = 15, eta = 0.01)
+model1 = AdalineGD(n_iter = 15, eta = 0.01)
 
 # Train the model
-model.fit(X_std, y)
+model1.fit(X_std, y)
 
 # Plot the training error
-plt.plot(range(1, len(model.cost_) + 1), model.cost_, marker = 'o')
+plt.plot(range(1, len(model1.cost_) + 1), model1.cost_, marker = 'o', color = 'red')
 plt.xlabel('Epochs')
 plt.ylabel('Sum-squared-error')
 plt.show()
 
 # Plot the decision boundary
-pdr.plot_decision_regions(X_std, y, classifier = model)
+pdr.plot_decision_regions(X_std, y, classifier = model1)
 plt.title('Adaline - Gradient Descent')
+plt.xlabel('sepal length [standardized')
+plt.ylabel('petal length [standardized]')
+plt.legend(loc = 'upper left')
+plt.show()
+
+# Create the AdalineSGD model
+model2 = AdalineSGD(n_iter = 15, eta = 0.01, random_state = 1)
+
+# Train the model
+model2.fit(X_std, y)
+
+# Plot the training errors of both of the models
+plt.plot(range(1, len(model2.cost_) + 1), model2.cost_, marker = 'x', color = 'blue')
+plt.xlabel('Epochs')
+plt.ylabel('Sum-squared-error')
+plt.show()
+
+
+# Plot the decision boundary
+pdr.plot_decision_regions(X_std, y, classifier = model2)
+plt.title('Adaline - Stochastic Gradient Descent')
 plt.xlabel('sepal length [standardized')
 plt.ylabel('petal length [standardized]')
 plt.legend(loc = 'upper left')

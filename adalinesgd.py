@@ -31,13 +31,13 @@ class AdalineSGD(object):
 	def __init__(self, eta = 0.01, n_iter = 10, shuffle= True,
 				random_state = None):
 
-	self.eta = eta
-	self.n_iter = n_iter
-	self.w_initialization = False
-	self.shuffle = shuffle
+		self.eta = eta
+		self.n_iter = n_iter
+		self.w_initialization = False
+		self.shuffle = shuffle
 
-	if random_state:
-		seed(random_state)
+		if random_state:
+			seed(random_state)
 
 	def fit(self, X, y):
 
