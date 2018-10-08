@@ -1,7 +1,7 @@
 # Implementation of Adaline
 
 This is an implentation of an ADAptive LInear NEuron (Adaline) in Python3. 
-The code in this repository is based on the Adaline example given in the book: Python Machine Learning by Sebastian Raschka.
+The code in this repository is based on the Adaline example given in the book: "Python Machine Learning by Sebastian Raschka".
 
 ## AdalineGD
 
