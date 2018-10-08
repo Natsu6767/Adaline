@@ -12,7 +12,7 @@ through the model.
 ## AdalineSGD
 
 Stochastic gradient descent is used to optimize the model. In this
-method, the weights are updated after each training sample.
+method the weights are updated after each training sample.
 
 ## Result
 
